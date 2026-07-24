@@ -1,0 +1,18 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"                                                                                        ,
+  "volta": {
+    "node": "15.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1"
+  }
+}
