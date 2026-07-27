@@ -1,4 +1,6 @@
 // import './models/sync.js'
+import './models/relation.js'
+import './mock/mockStudent.js'
 
 // import Admin from './models/admin.js'
 
@@ -108,3 +110,4 @@ import { addBook, delBook, updateBook } from './services/bookService.js';
 // }).then(res => {
 //     console.log(res);
 // })
+

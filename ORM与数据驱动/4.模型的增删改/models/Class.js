@@ -26,7 +26,7 @@ const Class = sequelize.define("Class", {
 //     console.error('Unable to sync the database:', error);
 // }
 
-Class.hasMany(Student);
+// Class.hasMany(Student);
 
 export default Class;
 
