@@ -2,8 +2,11 @@
 // 判断系统中是否有管理员
 import { where } from "sequelize";
 import Admin from "../models/admin.js";
+import md5 from 'md5'
 
 export async function addAdmin(adminObj) {
+    // 加密密码
+    adminObj.loginPwd = md5(adminObj.loginPwd)
     const ins = await Admin.create(adminObj)
     return ins.toJSON();
 }
@@ -37,6 +40,10 @@ export async function updateAdmin(adminid,adminObj){
     // await ins.save()
     
     // 方式二
+    // 加密密码
+    if(adminObj.loginPwd){
+        adminObj.loginPwd = md5(adminObj.loginPwd)
+    }
     const res = await Admin.update(adminObj,{
         where:{
             id : adminid
@@ -46,7 +53,10 @@ export async function updateAdmin(adminid,adminObj){
 }
 
 export async function login(loginId,loginPwd){
+    // 加密密码
+    loginPwd = md5(loginPwd)
     const result = await Admin.findOne({
+        // attributes:["id","loginId"],
         where:{
             loginId,
             loginPwd
