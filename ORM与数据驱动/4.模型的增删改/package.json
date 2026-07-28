@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "dayjs": "^1.11.21",
     "md5": "^2.3.0",
     "mockjs": "^1.1.0",
     "mysql2": "^3.23.1",
