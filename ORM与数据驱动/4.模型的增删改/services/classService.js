@@ -19,3 +19,24 @@ export async function updateClass(classid,classObj){
         }
     })
 }
+
+export async function getClassById(id){
+    const result = await Class.findByPk(id)
+    return result.toJSON()
+}
+
+export async function getClasses(){
+    const { count, rows } = await Class.findAndCountAll()
+    return {
+        count,
+        datas: rows.map((item) => item.toJSON())
+    }
+}
+
+// getClassById(1).then((result)=>{
+//     console.log(result)
+// })
+
+// getClasses().then((result)=>{
+//     console.log(result)
+// })

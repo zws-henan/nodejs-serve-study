@@ -44,3 +44,32 @@ export async function updateAdmin(adminid,adminObj){
     })
     return res
 }
+
+export async function login(loginId,loginPwd){
+    const result = await Admin.findOne({
+        where:{
+            loginId,
+            loginPwd
+        }
+    })
+    if(result && result.loginId === loginId && result.loginPwd === loginPwd){
+        return result.toJSON()
+    }
+    return null
+    // return result.toJSON()
+}
+
+export async function getAdminById(id){
+    const result = await Admin.findByPk(id)
+    return result.toJSON()
+}
+
+export async function getAdmins(){
+    const { count, rows } = await Admin.findAndCountAll()
+    return {
+        count,
+        datas: rows.map((item) => item.toJSON())
+    }
+}
+
+// console.log(await getAdmins())
