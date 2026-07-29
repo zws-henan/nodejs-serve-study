@@ -1,5 +1,11 @@
+import { type } from "node:os";
 import sequelize from "./db.js";
 import { DataTypes } from "sequelize";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js"
+
+dayjs.extend(utc);
+
 const Student = sequelize.define("Student", {
     name: {
         type: DataTypes.STRING,
@@ -7,7 +13,10 @@ const Student = sequelize.define("Student", {
     },
     birthDate:{
         type:DataTypes.DATE,
-        allowNull:false
+        allowNull:false,
+        get(){
+            return this.getDataValue("birthDate").getTime()
+        }
     },
     sex:{
         type:DataTypes.BOOLEAN,
@@ -16,6 +25,14 @@ const Student = sequelize.define("Student", {
     mobile:{
         type:DataTypes.STRING(11),
         allowNull:false
+    },
+    age:{
+        type:DataTypes.VIRTUAL,
+        get(){
+            const now = dayjs.utc();
+            const birth = dayjs.utc(this.birthDate);
+            return now.diff(birth, "year");
+        }
     }
 },{
     createdAt:false,

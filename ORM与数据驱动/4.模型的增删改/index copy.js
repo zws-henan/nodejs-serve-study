@@ -60,6 +60,10 @@ import * as classService from "./services/classService.js";
 
 import * as studentService from "./services/studentService.js";
 
+studentService.getStudents().then(res => {
+    console.log(res);
+})
+
 // studentService.addStudent({
 //     name:"张三",
 //     birthDate:"2000-04-01",
