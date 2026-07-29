@@ -1,11 +1,73 @@
 import { Op } from "sequelize";
 import Student from "../models/Student.js";
 import Class from "../models/Class.js";
+import validate from "validate.js";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+import { type } from "node:os";
+
+dayjs.extend(utc);
+
 
 export async function addStudent(studentObj) {
+    validate.validators.classExits = async function (classid){
+        const res = await Class.findByPk(classid);
+        if(res){
+            return
+        }
+        return "班级不存在"
+    }
+    const rule = {
+        name:{
+            presence: {
+                allowEmpty: false
+            },
+            type: "string",
+            length: {
+                minimum: 2,
+                maximum: 10
+            }
+        },
+        sex: {
+            presence: true,
+            type: "boolean",
+        },
+        birthDate:{
+            presence:{
+                allowEmpty:false
+            },
+            datetime:{
+                dateOnly:true,
+                earliest:dayjs.utc().subtract(18, "year").valueOf(),
+                latest:dayjs.utc().subtract(5, "year").valueOf()
+            }
+        },
+        mobile:{
+            presence: {
+                allowEmpty: false
+            },
+            type: "string",
+            format: {
+                pattern: /^1[3456789]\d{9}$/,
+                message: "手机号格式错误"
+            }
+        },
+        ClassId:{
+            presence: true,
+            numericality: {
+                onlyInteger: true,//必须是整数
+                strict: false,//严格模式，flase:允许类型错误，即允许字符串转换为整数
+            },
+            classExits:true
+        }
+    }
+    // 异步模式的验证：通过后validate什么都不会做即不会返回任何东西，如果失败会报错
+    await validate.async(studentObj, rule)
+    
     const ins = await Student.create(studentObj)
     return ins.toJSON()
 }
+
 
 export async function delStudent(studentid) {
     return await Student.destroy({

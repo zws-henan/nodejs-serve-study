@@ -9,7 +9,7 @@ dayjs.extend(customParseFormat);
 dayjs.extend(relativeTime);
 dayjs.locale("zh-cn");  // 设置全局中文
 
-// console.log(dayjs.utc().format());
+console.log(dayjs.utc(0).isValid());
 
 // console.log(dayjs().format());
 
@@ -29,24 +29,29 @@ const val = "1970-01-01 00:00:00"
 const format = ["YYYY-MM-DD HH:mm:ss", "YYYY-M-D H:m:s"]
 // console.log(dayjs("1970-01-01 00:00:00", format,true).format());
 // console.log(dayjs("1970-1-1 0:0:0",format,true).format());
-// console.log(dayjs("1410715640579",format,true).format());
+// console.log(dayjs(1410715640579).format());
 // console.log(dayjs("Wed Jul 29 2026 00:46:41 GMT+0800",format,true).format());
-
+// console.log(dayjs.utc(0, format, true).format());
 // 显示（发生在客户端）
 
 // ✅ 解决方案：手写一个支持多 format 的 UTC 解析函数（避开 dayjs 数组 bug）
 // 原理：逐个用单个 format 尝试，第一个匹配成功的就返回
 function parseUTC(str, formats, strict = true) {
+    let d
     for (const fmt of formats) {
-        const d = dayjs.utc(str, fmt, strict);
+        if (fmt === "x" || fmt === "X") {
+            d = dayjs.utc(str)
+        } else {
+            d = dayjs.utc(str, fmt, strict);
+        }
         if (d.isValid()) return d;
     }
     return dayjs(null);  // 全都不匹配，返回 Invalid Date
 }
 
 // 用法：支持多种格式，且都当 UTC 处理
-const formats = ["YYYY-MM-DD HH:mm:ss", "YYYY-M-D H:m:s"];
-const m = parseUTC("2015-01-05 23:00:00", formats);
+const formats = ["YYYY-MM-DD HH:mm:ss", "YYYY-M-D H:m:s","x"];
+const m = parseUTC(0, formats);
 console.log(m.local().format("YYYY年MM月DD日 HH:mm:ss"));
 // 输出: 2015年01月06日 07:00:00 ✅
 
