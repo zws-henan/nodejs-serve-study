@@ -5,20 +5,23 @@ import validate from "validate.js";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import { type } from "node:os";
+import { propertyHelper } from "../util/propertyHelper.js";
 
 dayjs.extend(utc);
 
 
 export async function addStudent(studentObj) {
-    validate.validators.classExits = async function (classid){
+    // const studentObj = { name: studentObj.name, sex: studentObj.sex, birthDate: studentObj.birthDate, mobile: studentObj.mobile, ClassId: studentObj.ClassId }
+    studentObj = propertyHelper(studentObj,"name","sex","birthDate","mobile","ClassId")
+    validate.validators.classExits = async function (classid) {
         const res = await Class.findByPk(classid);
-        if(res){
+        if (res) {
             return
         }
         return "班级不存在"
     }
     const rule = {
-        name:{
+        name: {
             presence: {
                 allowEmpty: false
             },
@@ -32,17 +35,17 @@ export async function addStudent(studentObj) {
             presence: true,
             type: "boolean",
         },
-        birthDate:{
-            presence:{
-                allowEmpty:false
+        birthDate: {
+            presence: {
+                allowEmpty: false
             },
-            datetime:{
-                dateOnly:true,
-                earliest:dayjs.utc().subtract(18, "year").valueOf(),
-                latest:dayjs.utc().subtract(5, "year").valueOf()
+            datetime: {
+                dateOnly: true,
+                earliest: dayjs.utc().subtract(18, "year").valueOf(),
+                latest: dayjs.utc().subtract(5, "year").valueOf()
             }
         },
-        mobile:{
+        mobile: {
             presence: {
                 allowEmpty: false
             },
@@ -52,18 +55,18 @@ export async function addStudent(studentObj) {
                 message: "手机号格式错误"
             }
         },
-        ClassId:{
+        ClassId: {
             presence: true,
             numericality: {
                 onlyInteger: true,//必须是整数
                 strict: false,//严格模式，flase:允许类型错误，即允许字符串转换为整数
             },
-            classExits:true
+            classExits: true
         }
     }
     // 异步模式的验证：通过后validate什么都不会做即不会返回任何东西，如果失败会报错
     await validate.async(studentObj, rule)
-    
+
     const ins = await Student.create(studentObj)
     return ins.toJSON()
 }
