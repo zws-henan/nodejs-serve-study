@@ -1,6 +1,6 @@
 // import './models/sync.js'
-import './models/relation.js'
-import './mock/mockStudent.js'
+import '../models/relation.js'
+import '../mock/mockStudent.js'
 
 // import Admin from './models/admin.js'
 
@@ -23,7 +23,7 @@ import './mock/mockStudent.js'
 //     console.log(ins.id,ins.loginId,ins.loginPwd);
 // })
 
-import * as adminService from "./services/adminService.js";
+import * as adminService from "../services/adminService.js";
 
 // adminService.addAdmin({
 //     loginId:"admin1",
@@ -41,7 +41,7 @@ import * as adminService from "./services/adminService.js";
 //     console.log(res);
 // })
 
-import * as classService from "./services/classService.js";
+import * as classService from "../services/classService.js";
 
 // classService.addClass({
 //     name:"计科251",
@@ -58,7 +58,7 @@ import * as classService from "./services/classService.js";
 //     name:"计算计科学与技术251班"
 // })
 
-import * as studentService from "./services/studentService.js";
+import * as studentService from "../services/studentService.js";
 
 studentService.getStudents().then(res => {
     console.log(res);
@@ -95,7 +95,7 @@ studentService.getStudents().then(res => {
 //     console.log(res);
 // })
 
-import { addBook, delBook, updateBook } from './services/bookService.js';
+import { addBook, delBook, updateBook } from '../services/bookService.js';
 
 // 添加书籍
 // await addBook({

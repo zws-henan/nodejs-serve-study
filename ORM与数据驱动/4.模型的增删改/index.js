@@ -15,13 +15,13 @@ app.get("/abc",(req,res)=>{
     console.log("请求参数:", req.query); // 得到请求参数
 
     // ===响应客户端===
-    // res.send("<h1>hello express</h1>");
+    res.send("<h1>hello express</h1>");      
     // res.json({name:"kuocheng"});
 
     // res.status(302).header("Location","https://www.baidu.com").end();
     // 上下的效果是一样的
     // res.status(302).location("https://www.baidu.com").end();
-    res.redirect(302,"https://www.baidu.com");
+    // res.redirect(302,"https://www.baidu.com");
 })
 // 动态路由
 app.get("/news/:id",(req,res)=>{

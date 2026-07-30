@@ -1,6 +1,6 @@
-import "./init.js"
-import {addAdmin,delAdmin,updateAdmin,login} from './services/adminService.js'
-import * as studentService from "./services/studentService.js"
+import "../init.js"
+import {addAdmin,delAdmin,updateAdmin,login} from '../services/adminService.js'
+import * as studentService from "../services/studentService.js"
 // import {sqlLogger,defaultLogger} from "./testlog.js"
 
 // sqlLogger.info("hello world")
