@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[492],{2492:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("电视")])])}],a={name:"MainTv"},s=a,c=u(1656),f=(0,c.A)(s,t,r,!1,null,"77aa6e00",null),i=f.exports}}]);
+//# sourceMappingURL=492.22cb8eaa.js.map

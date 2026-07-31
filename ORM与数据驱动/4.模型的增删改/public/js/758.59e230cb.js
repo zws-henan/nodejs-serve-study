@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[758],{758:function(n,e,u){u.r(e),u.d(e,{default:function(){return f}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("下载")])])}],a={name:"DownloadIndex"},c=a,l=u(1656),s=(0,l.A)(c,t,r,!1,null,"00eacab8",null),f=s.exports}}]);
+//# sourceMappingURL=758.59e230cb.js.map

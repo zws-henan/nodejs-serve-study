@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[972],{5972:function(n,u,e){e.r(u),e.d(u,{default:function(){return f}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("p",[n._v("社区")])])}],a={name:"MainCommunity"},c=a,i=e(1656),s=(0,i.A)(c,t,r,!1,null,"94c3ea1a",null),f=s.exports}}]);
+//# sourceMappingURL=972.dac01a3f.js.map

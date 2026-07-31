@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[870],{7870:function(n,u,e){e.r(u),e.d(u,{default:function(){return c}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("绘画")])])}],a={name:"MainPaint"},f=a,i=e(1656),s=(0,i.A)(f,t,r,!1,null,"40afd170",null),c=s.exports}}]);
+//# sourceMappingURL=870.19140bec.js.map

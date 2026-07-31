@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[670],{670:function(n,u,e){e.r(u),e.d(u,{default:function(){return f}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("时尚")])])}],s={name:"MainFashion"},a=s,c=e(1656),i=(0,c.A)(a,t,r,!1,null,"cb794a12",null),f=i.exports}}]);
+//# sourceMappingURL=670.82f3d946.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[317],{7317:function(n,e,u){u.r(e),u.d(e,{default:function(){return l}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("漫画")])])}],s={name:"MangaIndex"},a=s,c=u(1656),f=(0,c.A)(a,t,r,!1,null,"0d011362",null),l=f.exports}}]);
+//# sourceMappingURL=317.2a9fa842.js.map

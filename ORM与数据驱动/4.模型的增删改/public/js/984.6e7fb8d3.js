@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[984],{3984:function(e,n,u){u.r(n),u.d(n,{default:function(){return f}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("h1",[e._v("影视")])])}],i={name:"MainCinephile"},c=i,l=u(1656),s=(0,l.A)(c,t,r,!1,null,"044e911c",null),f=s.exports}}]);
+//# sourceMappingURL=984.6e7fb8d3.js.map

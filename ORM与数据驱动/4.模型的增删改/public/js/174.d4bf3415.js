@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[174],{8174:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("纪录片")])])}],c={name:"MainDocumentary"},s=c,a=e(1656),f=(0,a.A)(s,t,r,!1,null,"12b557c9",null),i=f.exports}}]);
+//# sourceMappingURL=174.d4bf3415.js.map

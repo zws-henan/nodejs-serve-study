@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[104],{8104:function(e,n,u){u.r(n),u.d(n,{default:function(){return l}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("h1",[e._v("直播")])])}],f={name:"LiveIndex"},s=f,c=u(1656),i=(0,c.A)(s,t,r,!1,null,"7d9f5315",null),l=i.exports}}]);
+//# sourceMappingURL=104.651891a5.js.map

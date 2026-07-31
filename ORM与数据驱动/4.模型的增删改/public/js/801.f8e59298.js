@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[801],{5801:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},f=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("动画")])])}],r={name:"MainDouga"},c=r,s=e(1656),a=(0,s.A)(c,t,f,!1,null,"deffcf84",null),i=a.exports}}]);
+//# sourceMappingURL=801.f8e59298.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[266],{1266:function(n,u,e){e.r(u),e.d(u,{default:function(){return l}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("娱乐")])])}],f={name:"MainEnt"},s=f,c=e(1656),i=(0,c.A)(s,t,r,!1,null,"027f3778",null),l=i.exports}}]);
+//# sourceMappingURL=266.53c48a6d.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[695],{8695:function(n,u,e){e.r(u),e.d(u,{default:function(){return l}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("鬼畜")])])}],c={name:"MainKichiku"},i=c,s=e(1656),f=(0,s.A)(i,t,r,!1,null,"23946c23",null),l=f.exports}}]);
+//# sourceMappingURL=695.b4dbcb1c.js.map

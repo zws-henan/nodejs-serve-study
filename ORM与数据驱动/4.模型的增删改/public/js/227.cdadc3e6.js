@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[227],{3227:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("邮箱")])])}],c={name:"EmailIndex"},f=c,l=u(1656),s=(0,l.A)(f,t,r,!1,null,"71cf6b35",null),i=s.exports}}]);
+//# sourceMappingURL=227.cdadc3e6.js.map

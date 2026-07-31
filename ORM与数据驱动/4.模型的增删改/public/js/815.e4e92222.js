@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[815],{9815:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var r=function(){var n=this;n._self._c;return n._m(0)},t=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("汽车")])])}],s={name:"MainCar"},a=s,c=e(1656),f=(0,c.A)(a,r,t,!1,null,"0b7d7b14",null),i=f.exports}}]);
+//# sourceMappingURL=815.e4e92222.js.map

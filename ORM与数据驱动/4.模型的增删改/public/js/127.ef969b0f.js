@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[127],{127:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("美食")])])}],f={name:"MainFood"},s=f,a=e(1656),c=(0,a.A)(s,t,r,!1,null,"35f1f1a0",null),i=c.exports}}]);
+//# sourceMappingURL=127.ef969b0f.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[153],{7153:function(n,e,u){u.r(e),u.d(e,{default:function(){return l}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("科技")])])}],c={name:"MainTech"},s=c,f=u(1656),i=(0,f.A)(s,t,r,!1,null,"214343bc",null),l=i.exports}}]);
+//# sourceMappingURL=153.85208109.js.map

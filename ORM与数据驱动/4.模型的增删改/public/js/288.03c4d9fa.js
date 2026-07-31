@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[288],{8288:function(n,u,e){e.r(u),e.d(u,{default:function(){return f}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("h1",[n._v("音乐")])])}],c={name:"MainMusic"},s=c,a=e(1656),i=(0,a.A)(s,t,r,!1,null,"33a70dac",null),f=i.exports}}]);
+//# sourceMappingURL=288.03c4d9fa.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[884],{1884:function(n,e,u){u.r(e),u.d(e,{default:function(){return c}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("游戏中心")])])}],f={name:"PlatformIndex"},l=f,s=u(1656),a=(0,s.A)(l,t,r,!1,null,"30906f9a",null),c=a.exports}}]);
+//# sourceMappingURL=884.07fd512e.js.map

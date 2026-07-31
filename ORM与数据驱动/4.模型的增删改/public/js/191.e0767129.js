@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[191],{3191:function(e,n,u){u.r(n),u.d(n,{default:function(){return i}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("h1",[e._v("动画")])])}],s={name:"MyAnime"},a=s,c=u(1656),f=(0,c.A)(a,t,r,!1,null,"8a4366ea",null),i=f.exports}}]);
+//# sourceMappingURL=191.e0767129.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[374],{6374:function(e,n,u){u.r(n),u.d(n,{default:function(){return i}});var t=function(){var e=this,n=e._self._c;return n("div")},r=[],l={name:"VipShopIndex"},s=l,c=u(1656),f=(0,c.A)(s,t,r,!1,null,"2b0741d1",null),i=f.exports}}]);
+//# sourceMappingURL=374.f53f79fd.js.map

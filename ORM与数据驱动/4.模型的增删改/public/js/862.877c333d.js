@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[862],{2862:function(n,u,e){e.r(u),e.d(u,{default:function(){return l}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,u=n._self._c;return u("div",[u("p",[n._v("活动中心")])])}],c={name:"MainActivity"},i=c,s=e(1656),f=(0,s.A)(i,t,r,!1,null,"126c3214",null),l=f.exports}}]);
+//# sourceMappingURL=862.877c333d.js.map

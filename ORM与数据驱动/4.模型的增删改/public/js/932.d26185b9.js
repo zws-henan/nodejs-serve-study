@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[932],{7932:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("知识")])])}],f={name:"MainKnowledge"},l=f,s=u(1656),c=(0,s.A)(l,t,r,!1,null,"43d4f960",null),i=c.exports}}]);
+//# sourceMappingURL=932.d26185b9.js.map

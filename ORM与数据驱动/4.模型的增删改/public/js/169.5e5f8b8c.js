@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[169],{169:function(e,n,u){u.r(n),u.d(n,{default:function(){return s}});var r=function(){var e=this;e._self._c;return e._m(0)},t=[function(){var e=this,n=e._self._c;return n("div",[n("p",[e._v("专栏")])])}],a={name:"MainBlackboard"},c=a,f=u(1656),l=(0,f.A)(c,r,t,!1,null,"69fe6eed",null),s=l.exports}}]);
+//# sourceMappingURL=169.5e5f8b8c.js.map

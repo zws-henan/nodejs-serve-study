@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[575],{6575:function(e,n,u){u.r(n),u.d(n,{default:function(){return i}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("p",[e._v("课堂")])])}],s={name:"MainCheese"},a=s,c=u(1656),f=(0,c.A)(a,t,r,!1,null,"6a015425",null),i=f.exports}}]);
+//# sourceMappingURL=575.8cbe19d4.js.map

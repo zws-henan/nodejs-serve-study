@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[431],{8431:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("游戏")])])}],c={name:"MainGame"},a=c,s=u(1656),f=(0,s.A)(a,t,r,!1,null,"5c78dc9a",null),i=f.exports}}]);
+//# sourceMappingURL=431.087bf7f0.js.map

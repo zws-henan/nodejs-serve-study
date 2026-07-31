@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[994],{6994:function(e,n,u){u.r(n),u.d(n,{default:function(){return l}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("h1",[e._v("编辑中心")])])}],s={name:"EditCenterIndex"},c=s,f=u(1656),i=(0,f.A)(c,t,r,!1,null,"217d3333",null),l=i.exports}}]);
+//# sourceMappingURL=994.27b69f47.js.map

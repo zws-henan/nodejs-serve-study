@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[296],{296:function(e,n,u){u.r(n),u.d(n,{default:function(){return a}});var t=function(){var e=this;e._self._c;return e._m(0)},r=[function(){var e=this,n=e._self._c;return n("div",[n("h1",[e._v("比赛")])])}],c={name:"MatchIndex"},s=c,f=u(1656),l=(0,f.A)(s,t,r,!1,null,"9d19484e",null),a=l.exports}}]);
+//# sourceMappingURL=296.6c9ff0a0.js.map

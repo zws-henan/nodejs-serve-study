@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmy_vue"]=self["webpackChunkmy_vue"]||[]).push([[566],{3566:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this;n._self._c;return n._m(0)},r=[function(){var n=this,e=n._self._c;return e("div",[e("h1",[n._v("运动")])])}],s={name:"MainSports"},c=s,a=u(1656),f=(0,a.A)(c,t,r,!1,null,"a67902ce",null),i=f.exports}}]);
+//# sourceMappingURL=566.5cfc1eab.js.map
