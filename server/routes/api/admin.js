@@ -9,6 +9,11 @@ adminRouter.post("/login", async (req, res) => {
     const { loginId, loginPwd } = req.body;
     const result = await adminService.login(loginId, loginPwd);
     if (result) {
+        res.cookie("token", result.id, {
+            path: "/",
+            maxAge: 3600 * 1000,
+            httpOnly: false
+        });
         res.send(normalHandeler(result));
     } else {
         res.send(errHandeler("账号或密码错误", 400));

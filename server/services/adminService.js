@@ -56,7 +56,9 @@ export async function addAdmin(adminObj) {
     // 加密密码
     adminObj.loginPwd = md5(adminObj.loginPwd)
     const ins = await Admin.create(adminObj)
-    return ins.toJSON();
+    const json = ins.toJSON();
+    delete json.loginPwd;
+    return json;
 }
 
 export async function delAdmin(adminid) {
@@ -170,7 +172,9 @@ export async function login(loginId, loginPwd) {
         }
     })
     if (result && result.loginId === loginId && result.loginPwd === loginPwd) {
-        return result.toJSON()
+        const json = result.toJSON();
+        delete json.loginPwd;
+        return json;
     }
     return null
 }
@@ -190,7 +194,9 @@ export async function getAdminById(id) {
     await validate.async({ id }, rule)
 
     const result = await Admin.findByPk(id)
-    return result.toJSON()
+    const json = result.toJSON();
+    delete json.loginPwd;
+    return json;
 }
 
 export async function getAdmins(page = 1, limit = 10) {
