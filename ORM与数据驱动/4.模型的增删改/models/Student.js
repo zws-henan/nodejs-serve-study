@@ -15,7 +15,8 @@ const Student = sequelize.define("Student", {
         type:DataTypes.DATE,
         allowNull:false,
         get(){
-            return this.getDataValue("birthDate").getTime()
+            const val = this.getDataValue("birthDate")
+            return val ? val.getTime() : val
         }
     },
     sex:{

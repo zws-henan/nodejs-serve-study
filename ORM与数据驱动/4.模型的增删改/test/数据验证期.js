@@ -5,9 +5,37 @@ import * as studentService from "../services/studentService.js"
 
 // sqlLogger.info("hello world")
 
-studentService.getStudents().then((result)=>{
-    console.log(result);
-})
+// studentService.getStudents().then((result)=>{
+//     console.log(result);
+// })
+
+// studentService.delStudent("670").then((result)=>{
+//     console.log(result);
+// }).catch((err) => {
+//     console.log("删除失败:", err);
+// })
+
+// studentService.getStudents(1,10,0,"").then((result)=>{
+//     console.log(result);
+// })
+
+// studentService.getStudentById("671").then((result)=>{
+//     console.log(result);
+// }).catch((err) => {
+//     console.log("查询失败:", err);
+// })
+
+// studentService.updateStudent("671",{
+//     name:"小刚",
+//     // sex:true,
+//     birthDate:"2009-03-05",
+//     // mobile:"13800000000",
+//     // ClassId:"1",
+// }).then((result)=>{
+//     console.log(result);
+// }).catch((err) => {
+//     console.log("更新失败:", err);
+// })
 
 // studentService.addStudent({
 //     name: "小刚",

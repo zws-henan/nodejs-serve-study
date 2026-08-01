@@ -1,5 +1,7 @@
 import express from "express"
 import myUrlEncding from "./myUrlEncding.js"
+import studentRouter from "./api/student.js"
+
 import path from 'path';
 import { fileURLToPath } from "url";
 
@@ -29,9 +31,11 @@ app.use(express.urlencoded(
 app.use(express.json());
 // app.use(myUrlEncding);
 
-app.post("/api/student",(req,res)=>{
-    console.log(req.body);
-})
+app.use("/api/student",studentRouter)
+
+// app.post("/api/student",(req,res)=>{
+//     console.log(req.body);
+// })
 
 const PORT = 9527
 app.listen(PORT,()=>{
