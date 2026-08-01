@@ -1,25 +1,42 @@
 import express from "express"
+import * as studentService from "../../services/studentService.js"
+import { errHandeler, normalHandeler } from "../../routes/getSendResult.js"
 
 const studentRouter = express.Router();
 
-studentRouter.get("/",(req,res)=>{
-    res.send("获取学生列表")
+studentRouter.get("/", async (req, res) => {
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 10;
+    const sex = req.query.sex || -1;
+    const name = req.query.name || "";
+    const result = await studentService.getStudents(page, limit, sex, name);
+    res.send(normalHandeler(result));
 })
 
-studentRouter.get("/:id",(req,res)=>{
-    res.send(`获取指定学生${req.params.id}`);
+studentRouter.get("/:id", async (req, res) => {
+    const id = req.params.id;
+    const result = await studentService.getStudentById(id);
+    res.send(normalHandeler(result));
 })
 
-studentRouter.post("/",(req,res)=>{
-    res.send("添加学生");
+studentRouter.post("/", async (req, res) => {
+    const stuObj = req.body;
+    const result = await studentService.addStudent(stuObj);
+    
+    res.send(normalHandeler(result));
 })
 
-studentRouter.put("/",(req,res)=>{
-    res.send("更新学生");
+studentRouter.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const stuObj = req.body;
+    const result = await studentService.updateStudent(id, stuObj);
+    res.send(normalHandeler(result));
 })
 
-studentRouter.delete("/:id",(req,res)=>{
-    res.send(`删除学生${req.params.id}`);
+studentRouter.delete("/:id", async (req, res) => {
+    const id = req.params.id;
+    const result = await studentService.delStudent(id);
+    res.send(normalHandeler(result));
 })
 
 export default studentRouter

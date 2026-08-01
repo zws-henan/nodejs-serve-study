@@ -1,0 +1,14 @@
+export function errHandeler(err = "server Internal error",code = 500){
+    return {
+        code: code,
+        msg: err,
+    }
+}
+
+export function normalHandeler(data = {}){
+    return {
+        code: 200,
+        msg: "",
+        data: data,
+    }
+}

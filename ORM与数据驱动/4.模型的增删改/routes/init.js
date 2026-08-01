@@ -1,6 +1,12 @@
 import express from "express"
 import myUrlEncding from "./myUrlEncding.js"
 import studentRouter from "./api/student.js"
+import adminRouter from "./api/admin.js"
+import bookRouter from "./api/book.js"
+import classRouter from "./api/class.js"
+import {errorMiddleware} from "./errorMiddleware.js"
+
+
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -32,10 +38,15 @@ app.use(express.json());
 // app.use(myUrlEncding);
 
 app.use("/api/student",studentRouter)
+app.use("/api/admin",adminRouter)
+app.use("/api/book",bookRouter)
+app.use("/api/class",classRouter)
 
 // app.post("/api/student",(req,res)=>{
 //     console.log(req.body);
 // })
+
+app.use(errorMiddleware);
 
 const PORT = 9527
 app.listen(PORT,()=>{

@@ -4,7 +4,7 @@ import Class from "../models/Class.js";
 import validate from "validate.js";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
-import { type } from "node:os";
+
 import { propertyHelper } from "../util/propertyHelper.js";
 
 dayjs.extend(utc);
@@ -212,7 +212,7 @@ export async function getStudents(page = 1, limit = 10, sex = -1, name = "") {
                 onlyInteger: true,
                 strict: false,
             },
-            inclusion: [-1, 0, 1]//-1:全部 0:女 1:男
+            inclusion: [-1, "0", "1"]//-1:全部 0:女 1:男
         },
         name: {
             type: "string",
@@ -240,7 +240,7 @@ export async function getStudents(page = 1, limit = 10, sex = -1, name = "") {
         limit: +limit
     })
     return {
-        count,
+        total: count,
         datas: rows.map((item) => {
             const result = item.toJSON()
             result.Class = {

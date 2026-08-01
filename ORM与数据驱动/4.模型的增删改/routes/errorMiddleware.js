@@ -1,9 +1,9 @@
+import { errHandeler } from "./getSendResult.js";
 export function errorMiddleware(err,req,res,next){
     if(err){
-        res.send({
-            code:500,
-            msg:err instanceof Error ? err.message : err.stack
-        });
+        const error = err;
+        // console.log(error instanceof Error);
+        res.status(500).send(errHandeler(error));
     }else{
         next();
     }
