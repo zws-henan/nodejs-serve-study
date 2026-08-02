@@ -1,6 +1,7 @@
 import express from "express"
 import * as adminService from "../../services/adminService.js"
 import { errHandeler, normalHandeler } from "../../routes/getSendResult.js"
+import * as crypt from "../../util/crypt.js"
 
 const adminRouter = express.Router();
 
@@ -8,12 +9,15 @@ const adminRouter = express.Router();
 adminRouter.post("/login", async (req, res) => {
     const { loginId, loginPwd } = req.body;
     const result = await adminService.login(loginId, loginPwd);
+    
     if (result) {
-        res.cookie("token", result.id, {
+        const value = crypt.encrypt(crypt.secret, String(result.id));
+        res.cookie("token", value, {
             path: "/",
             maxAge: 3600 * 1000,
-            httpOnly: false
+            httpOnly: false,
         });
+        res.header("authorization", value);
         res.send(normalHandeler(result));
     } else {
         res.send(errHandeler("账号或密码错误", 400));

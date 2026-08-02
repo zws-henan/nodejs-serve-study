@@ -1,7 +1,7 @@
 export function errHandeler(err = "server Internal error",code = 500){
     return {
         code: code,
-        msg: err,
+        msg: err instanceof Error ? err.message : err,
     }
 }
 

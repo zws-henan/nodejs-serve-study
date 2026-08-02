@@ -1,10 +1,12 @@
 import express from "express"
+import cookieParser from "cookie-parser"
 import myUrlEncding from "./myUrlEncding.js"
 import studentRouter from "./api/student.js"
 import adminRouter from "./api/admin.js"
 import bookRouter from "./api/book.js"
 import classRouter from "./api/class.js"
 import {errorMiddleware} from "./errorMiddleware.js"
+import {tokenHandel} from "./tokenMiddleware.js"
 
 
 
@@ -18,6 +20,8 @@ const staticPath = path.resolve(__dirname,"../public");
 
 const app = express();
 
+app.use(cookieParser());
+
 // 当请求时会根据请求路径，从指定的目录中查找文件，如果存在直接响应文件内容。不再移交给后续的中间件。如果文件不存在则会移交给后续的中间件。
 // 默认情况下如果映射结果是一个目录，会自动去寻找目录下的index.html文件。如果不存在则会返回一个404错误。这个是可配置的。
 // app.use(express.static(staticPath,{{
@@ -28,6 +32,8 @@ app.use(express.static(staticPath));
 // app.use("/static",(req,res)=>{
 //     console.log(req.baseUrl,req.path);
 // });
+
+app.use(tokenHandel); 
 
 app.use(express.urlencoded(
     {
