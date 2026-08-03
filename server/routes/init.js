@@ -7,7 +7,8 @@ import bookRouter from "./api/book.js"
 import classRouter from "./api/class.js"
 import {errorMiddleware} from "./errorMiddleware.js"
 import {tokenHandel} from "./tokenMiddleware.js"
-
+import corsMiddleware from "./corsMiddleware.js"
+import cors from "cors"
 
 
 import path from 'path';
@@ -19,6 +20,20 @@ const __filename = fileURLToPath(import.meta.url);
 const staticPath = path.resolve(__dirname,"../public");
 
 const app = express();
+
+const whiteList = ["http://127.0.0.1:5502","null"]
+app.use(cors({
+    origin(origin,callBack){
+        if(whiteList.includes(origin)){
+            callBack(null,true);
+        }else{
+            callBack(new Error("Not Allowed by CORS"));
+        }
+    },
+    credentials:true
+}));
+
+// app.use(corsMiddleware);
 
 app.use(cookieParser());
 

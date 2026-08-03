@@ -1,6 +1,7 @@
 import express from "express"
 import * as studentService from "../../services/studentService.js"
 import { errHandeler, normalHandeler } from "../../routes/getSendResult.js"
+import { Json } from "sequelize/lib/utils";
 
 const studentRouter = express.Router();
 
@@ -10,6 +11,10 @@ studentRouter.get("/", async (req, res) => {
     const sex = req.query.sex || -1;
     const name = req.query.name || "";
     const result = await studentService.getStudents(page, limit, sex, name);
+    // const json = JSON.stringify(result);
+    // const script = `callBack(${json})`
+    // res.header("Content-Type","text/javascript");
+    // res.send(script);
     res.send(normalHandeler(result));
 })
 

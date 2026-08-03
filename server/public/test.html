@@ -11,5 +11,35 @@
         <input type="password" name="loginPwd" id="">
         <input type="submit" value="登录">
     </form>
+    <script>
+        // fetch("http://localhost:9527/api/student?page=1",{
+        //     method:"get",
+
+        // }).then(res=>res.json()).then(data=>console.log(data));
+        fetch("http://localhost:9527/api/student",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                a:1
+            },
+            credentials:"include"
+            
+        }).then(res=>res.json()).then(data=>console.log(data));
+    </script>
+    <!-- <script>
+        function jsonp(url){
+            const script = document.createElement("script");
+            script.src = url;
+            document.body.appendChild(script);
+            script.onload = ()=>{
+                document.body.removeChild(script);
+            }
+        }
+        jsonp("http://localhost:9527/api/student");
+        function callBack(data){
+            console.log(data);
+        }
+    </script> -->
+    <!-- <script src="http://localhost:9527/api/student"></script> -->
 </body>
 </html>
