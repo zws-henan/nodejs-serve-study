@@ -1,30 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
-    <form action="/api/admin/login" method="post">
+    <!-- <form action="/api/admin/login" method="post">
         <input type="text" name="loginId" id="">
         <input type="password" name="loginPwd" id="">
         <input type="submit" value="登录">
-    </form>
+    </form> -->
+    <button class="login">登录</button>
+    <button class="add">添加</button>
     <script>
         // fetch("http://localhost:9527/api/student?page=1",{
         //     method:"get",
 
         // }).then(res=>res.json()).then(data=>console.log(data));
-        fetch("http://localhost:9527/api/student",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-                a:1
-            },
-            credentials:"include"
-            
-        }).then(res=>res.json()).then(data=>console.log(data));
+        document.querySelector(".login").addEventListener("click", () => {
+            fetch("http://127.0.0.1:9527/api/admin/login", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include", // 必须带 cookie，session 才能跨请求保持
+                body: JSON.stringify({
+                    loginId: "admin",
+                    loginPwd: "654321",
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
+        });
+
+        document.querySelector(".add").addEventListener("click", () => {
+            fetch("http://127.0.0.1:9527/api/student", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include", // 带上登录时保存的 connect.sid cookie
+                body: JSON.stringify({
+                    name: "abc",
+                    sex:true,
+                    birthDate: "2009-03-05",
+                    mobile:"13800000000",
+                    ClassId:"1",
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
+        });
+
+        // fetch("http://localhost:9527/api/student",{
+        //     method:"POST",
+        //     headers:{
+        //         "Content-Type":"application/json",
+        //         a:1
+        //     },
+        //     credentials:"include"
+
+        // }).then(res=>res.json()).then(data=>console.log(data));
     </script>
     <!-- <script>
         function jsonp(url){
@@ -42,4 +81,5 @@
     </script> -->
     <!-- <script src="http://localhost:9527/api/student"></script> -->
 </body>
+
 </html>

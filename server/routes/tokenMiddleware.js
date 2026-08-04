@@ -1,11 +1,14 @@
 import {errHandeler} from "./getSendResult.js"
 import {match} from "path-to-regexp"
 import {decrypt, secret} from "../util/crypt.js"
+import {verify} from "./jwt.js"
 
 // 预编译匹配器：启动时只编译一次，避免每次请求都重新生成正则
 const config = [
     {method:"POST", path:"/api/student", matcher: match("/api/student")},
-    {method:"PUT", path:"/api/student/:id", matcher: match("/api/student/:id")}
+    {method:"PUT", path:"/api/student/:id", matcher: match("/api/student/:id")},
+    {method:"DELETE", path:"/api/student/:id", matcher: match("/api/student/:id")},
+    {method:"GET", path:"/api/admin/whoami", matcher: match("/api/admin/whoami")},
 ]
 
 export function tokenHandel(req,res,next){
@@ -16,21 +19,40 @@ export function tokenHandel(req,res,next){
         next();
         return
     }
-    let token = req.cookies.token;
-    if(!token){
-        token = req.headers.authorization;
-    }
-    if(!token){
-        res.status(403).send(errHandeler("token不存在",403));
+    const jw = verify(req);
+    if(jw){
+        req.userId = jw.id;
+        next();
+    }else{
+        res.status(403).send(errHandeler("token无效或已篡改",403));
         return
     }
-    try {
-        const userId = decrypt(secret, token); // 解密失败会抛 bad decrypt
-        req.userId = userId; // 挂到 req 上，后续接口可直接用
-        // console.log(userId);
+
+    // ===session===
+    // if(req.session.loginUser){
+    //     next();
+    //     return
+    // }else{
+    //     res.status(403).send(errHandeler("请先登录",403));
+    //     return
+    // }
+
+    // ===cookie===
+    // let token = req.cookies.token;
+    // if(!token){
+    //     token = req.headers.authorization;
+    // }
+    // if(!token){
+    //     res.status(403).send(errHandeler("token不存在",403));
+    //     return
+    // }
+    // try {
+    //     const userId = decrypt(secret, token); // 解密失败会抛 bad decrypt
+    //     req.userId = userId; // 挂到 req 上，后续接口可直接用
+    //     // console.log(userId);
         
-        next();
-    } catch {
-        res.status(403).send(errHandeler("token无效或已篡改",403));
-    }
+    //     next();
+    // } catch {
+    //     res.status(403).send(errHandeler("token无效或已篡改",403));
+    // }
 }

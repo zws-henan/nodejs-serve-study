@@ -2,22 +2,27 @@ import express from "express"
 import * as adminService from "../../services/adminService.js"
 import { errHandeler, normalHandeler } from "../../routes/getSendResult.js"
 import * as crypt from "../../util/crypt.js"
+import { publish } from "../../routes/jwt.js"
 
 const adminRouter = express.Router();
 
 // 登录
 adminRouter.post("/login", async (req, res) => {
     const { loginId, loginPwd } = req.body;
+    // console.log(loginId,loginPwd);
     const result = await adminService.login(loginId, loginPwd);
-    
     if (result) {
-        const value = crypt.encrypt(crypt.secret, String(result.id));
-        res.cookie("token", value, {
-            path: "/",
-            maxAge: 3600 * 1000,
-            httpOnly: false,
-        });
-        res.header("authorization", value);
+        // const value = crypt.encrypt(crypt.secret, String(result.id));
+        publish(res,undefined,{id:result.id})
+        // ===session===
+        // req.session.loginUser = result;
+        // ===cookie===
+        // res.cookie("token", value, {
+        //     path: "/",
+        //     maxAge: 3600 * 1000,
+        //     httpOnly: false,
+        // });
+        // res.header("authorization", value);
         res.send(normalHandeler(result));
     } else {
         res.send(errHandeler("账号或密码错误", 400));
@@ -29,6 +34,11 @@ adminRouter.get("/", async (req, res) => {
     const page = req.query.page || 1;
     const limit = req.query.limit || 10;
     const result = await adminService.getAdmins(page, limit);
+    res.send(normalHandeler(result));
+})
+adminRouter.get("/whoami",async (req,res) => {
+    const id  = req.userId;
+    const result = await adminService.getAdminById(id);
     res.send(normalHandeler(result));
 })
 
@@ -60,5 +70,6 @@ adminRouter.delete("/:id", async (req, res) => {
     const result = await adminService.delAdmin(id);
     res.send(normalHandeler(result));
 })
+
 
 export default adminRouter

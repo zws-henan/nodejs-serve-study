@@ -9,7 +9,7 @@ import {errorMiddleware} from "./errorMiddleware.js"
 import {tokenHandel} from "./tokenMiddleware.js"
 import corsMiddleware from "./corsMiddleware.js"
 import cors from "cors"
-
+import session from "express-session"
 
 import path from 'path';
 import { fileURLToPath } from "url";
@@ -21,10 +21,16 @@ const staticPath = path.resolve(__dirname,"../public");
 
 const app = express();
 
-const whiteList = ["http://127.0.0.1:5502","null"]
+app.use(session({
+    secret:"123456",
+    
+}))
+
+const whiteList = ["http://127.0.0.1:5502","http://localhost:9527","http://127.0.0.1:9527"]
 app.use(cors({
     origin(origin,callBack){
-        if(whiteList.includes(origin)){
+        // 同源请求或服务器间请求没有 Origin 头，直接放行
+        if(!origin || whiteList.includes(origin)){
             callBack(null,true);
         }else{
             callBack(new Error("Not Allowed by CORS"));

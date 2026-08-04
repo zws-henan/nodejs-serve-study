@@ -183,7 +183,7 @@ export async function getAdminById(id) {
     const rule = {
         id: {
             presence: true,
-            type: "string",
+            // type: "string",
             numericality: {
                 onlyInteger: true,
                 strict: false,
